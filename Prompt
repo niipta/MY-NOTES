@@ -1,1 +1,735 @@
+You are working on MahirVerse, an existing production-ready React/Vite study management application.
 
+Your task is to redesign ONLY the Dashboard/Home experience in this phase.
+
+IMPORTANT:
+Do not redesign the entire application yet.
+Do not change the database.
+Do not change Supabase schema, authentication, APIs, routes, business logic, or existing feature behavior.
+Do not remove existing functionality.
+Do not rewrite the application architecture.
+Do not introduce a new UI framework.
+Do not blindly follow generic SaaS/dashboard templates.
+
+You have full creative freedom over the visual design of the Dashboard.
+
+==================================================
+1. FIRST: UNDERSTAND THE EXISTING APP
+==================================================
+
+Before changing anything:
+
+- Inspect the repository structure.
+- Identify the current Dashboard/Home route and all components used by it.
+- Inspect the existing design tokens, Tailwind/CSS setup, typography, theme system, reusable UI components, icons, state management, and data hooks.
+- Understand where Dashboard data comes from.
+- Understand which actions currently work from the Dashboard.
+- Identify mobile and desktop layouts.
+- Reuse existing components/data/state wherever practical.
+
+Do NOT start coding immediately.
+
+First mentally model:
+- who uses MahirVerse
+- what a student actually needs when opening the app
+- what information deserves attention
+- what information should stay secondary
+- which actions should be one-tap
+- what causes cognitive overload in typical study dashboards
+
+The Dashboard should help the user answer these questions within seconds:
+
+1. What should I study now?
+2. What is already done today?
+3. What is due or important?
+4. What should I continue from where I stopped?
+5. How am I progressing?
+6. What is my next action?
+
+==================================================
+2. DESIGN PHILOSOPHY
+==================================================
+
+Create a distinctive MahirVerse visual identity.
+
+The target feeling:
+
+PREMIUM + CALM + INTELLIGENT + FOCUSED + PERSONAL
+
+Think of MahirVerse as a combination of:
+
+- a premium productivity workspace
+- a modern academic command center
+- a calm focus environment
+
+Take inspiration from the restraint and polish of products like Apple, Linear, Notion, Arc, Things, and modern premium productivity apps — but DO NOT copy their UI.
+
+The design should feel like its own product.
+
+Avoid:
+
+- generic SaaS dashboards
+- excessive glassmorphism
+- excessive gradients
+- huge decorative cards
+- unnecessary illustrations
+- dashboard clutter
+- too many colors
+- excessive rounded rectangles
+- giant headings taking half the screen
+- meaningless statistics
+- chart overload
+- visual noise
+- "AI startup landing page" aesthetics
+
+Minimal does NOT mean empty.
+
+Use hierarchy, spacing, typography, subtle surfaces and meaningful visual emphasis.
+
+The goal is:
+
+"Everything has a reason to be here."
+
+==================================================
+3. HUMAN-FIRST DASHBOARD
+==================================================
+
+Design the Dashboard around the student's mental state.
+
+When someone opens MahirVerse, they should not feel:
+
+"Where do I click?"
+
+They should feel:
+
+"I know exactly what I should do next."
+
+The Dashboard should have a clear visual priority.
+
+PRIMARY:
+The next meaningful study action.
+
+SECONDARY:
+Today's plan, progress, revision and continuation.
+
+TERTIARY:
+Stats, streaks, achievements and other supporting information.
+
+Do not give every section equal visual weight.
+
+==================================================
+4. DASHBOARD STRUCTURE
+==================================================
+
+Create a thoughtful composition approximately following this hierarchy.
+
+A. TOP CONTEXT AREA
+
+A calm, compact header containing:
+
+- time-aware greeting
+- user's name if available
+- a subtle contextual message
+- date/day context where useful
+
+Example tone:
+
+"Good evening, Mahir."
+"Let's make today's session count."
+
+Do not make the greeting overly motivational or cheesy.
+
+Avoid generic:
+"Welcome to your dashboard!"
+
+The greeting should feel personal but restrained.
+
+--------------------------------------------------
+
+B. PRIMARY "NEXT ACTION" AREA
+
+This is the most important section.
+
+Show the student's most relevant next action based on available existing data.
+
+Possible states:
+
+- Continue an unfinished study session
+- Start today's planned topic
+- Revision due
+- Continue a syllabus topic
+- Start focus session
+- If there is no meaningful task, provide a sensible fallback
+
+The primary action should be visually obvious without becoming a giant colorful card.
+
+Example conceptual structure:
+
+NEXT UP
+
+Quantitative Aptitude
+Percentages
+
+"Continue where you left off"
+
+[ Continue studying ]
+
+Secondary metadata can include:
+- estimated duration
+- subject
+- chapter
+- progress
+
+Use subtle visual emphasis.
+
+This should feel like a calm command center, not a promotional banner.
+
+--------------------------------------------------
+
+C. TODAY'S PROGRESS
+
+Show a concise snapshot of today's activity.
+
+Possible information:
+
+- study time
+- completed tasks
+- planned tasks
+- progress toward today's goal
+- current streak/consistency if available
+
+Do NOT display every metric.
+
+Select only metrics that help the student understand today's state.
+
+Prefer elegant progress indicators over multiple giant statistic cards.
+
+Example concept:
+
+TODAY
+
+2h 15m studied
+4 / 6 tasks completed
+
+[progress indicator]
+
+The exact values must come from existing application data.
+
+Never fabricate data.
+
+--------------------------------------------------
+
+D. TODAY'S PLAN
+
+Display today's tasks in a highly readable way.
+
+The student should be able to understand the plan almost instantly.
+
+Each item can contain:
+
+- completion state
+- topic/title
+- subject
+- estimated or actual duration where available
+- priority/status
+- quick action
+
+Use progressive disclosure.
+
+Do not turn this into a spreadsheet.
+
+Completed tasks should visually recede rather than disappear.
+
+The next unfinished task should have slightly stronger emphasis.
+
+Provide a clear "View plan" action if the existing route exists.
+
+--------------------------------------------------
+
+E. CONTINUE STUDYING
+
+If the user has recently interacted with syllabus topics, show a compact continuation area.
+
+Example:
+
+Continue studying
+
+English
+Active & Passive Voice
+68% complete
+
+[Continue]
+
+This should help users resume without searching through the syllabus.
+
+If no recent activity exists, gracefully hide this section or replace it with a useful empty state.
+
+Do NOT show empty cards just to preserve layout.
+
+--------------------------------------------------
+
+F. REVISION / DUE NOW
+
+If revision functionality exists and there are items due:
+
+Show a compact "Due for revision" section.
+
+Example:
+
+Revision due
+
+5 topics ready
+
+- Algebra
+- Banking
+- Cloze Test
+
+[Review now]
+
+The section should create clarity, not anxiety.
+
+If nothing is due:
+
+Use a very subtle positive empty state.
+
+Example:
+
+"You're caught up for now."
+
+Do not make empty states look like errors.
+
+--------------------------------------------------
+
+G. FOCUS / POMODORO
+
+Expose Focus/Pomodoro as one of the signature actions of MahirVerse.
+
+But do NOT create a huge timer on the dashboard.
+
+Use a compact, premium entry point:
+
+FOCUS
+
+Ready for a focused session?
+
+25 min
+[ Start focus ]
+
+If an active session exists, prioritize:
+
+"Focus session in progress"
+
+[Resume]
+
+The actual immersive Focus screen will be redesigned in a later phase.
+
+--------------------------------------------------
+
+H. LONG-TERM PROGRESS
+
+Show a lightweight view of meaningful progress.
+
+Potential information:
+
+- syllabus completion
+- weekly study consistency
+- weekly study time
+- current streak
+
+Avoid multiple graphs.
+
+One strong visualization is better than four mediocre charts.
+
+The user should understand:
+
+"Am I moving forward?"
+
+within a few seconds.
+
+Provide a clear route to the full Progress/Analytics page.
+
+--------------------------------------------------
+
+I. MOTIVATION / IDENTITY
+
+If the existing quote system is available, use it carefully.
+
+Do not make motivational quotes dominate the Dashboard.
+
+A short quote can appear as a subtle finishing element.
+
+It should feel like:
+
+a thoughtful touch
+
+not:
+
+a motivational poster.
+
+==================================================
+5. VISUAL DESIGN SYSTEM
+==================================================
+
+Create a cohesive visual hierarchy.
+
+Typography should do most of the work.
+
+Use:
+
+- strong but restrained headings
+- readable body text
+- clear metadata hierarchy
+- consistent font weights
+- generous whitespace
+- compact labels
+- meaningful emphasis
+
+Avoid excessive font sizes.
+
+Spacing should feel intentional.
+
+Cards should not all look identical.
+
+Use different surface treatments where hierarchy requires it:
+
+- primary surface
+- secondary surface
+- subtle inset surface
+- border-only section
+- transparent/flat section
+
+Use borders and shadows very carefully.
+
+Depth should be subtle.
+
+Avoid:
+"every section is a floating card."
+
+==================================================
+6. COLOR SYSTEM
+==================================================
+
+Do not introduce a rainbow UI.
+
+Use the existing MahirVerse theme where possible.
+
+Create a restrained color hierarchy:
+
+- neutral base
+- primary accent
+- success
+- warning
+- danger
+
+Accent colors should communicate meaning.
+
+Do not color every card.
+
+Use color as information, not decoration.
+
+Dark mode must feel intentionally designed, NOT simply inverted.
+
+Light mode must feel premium and calm, NOT overly white and empty.
+
+==================================================
+7. SIGNATURE VISUAL ELEMENT
+==================================================
+
+Introduce ONE distinctive visual element that can eventually become part of MahirVerse's identity.
+
+Examples:
+
+- a subtle progress rail
+- a unique focus indicator
+- a refined activity pulse
+- a distinctive syllabus-progress treatment
+- an elegant "next action" marker
+
+Choose the element that fits the existing application best.
+
+It should be subtle enough to remain useful and recognizable enough to create product identity.
+
+Do NOT add decorative gimmicks.
+
+==================================================
+8. RESPONSIVE DESIGN
+==================================================
+
+Design mobile-first.
+
+Test mentally and structurally at:
+
+360px
+390px
+430px
+768px
+1024px
+1366px+
+1440px+
+
+On mobile:
+
+- prioritize the next action
+- reduce secondary information
+- avoid horizontal overflow
+- avoid tiny text
+- use comfortable touch targets
+- stack sections naturally
+- maintain clear hierarchy
+
+Do not simply shrink the desktop layout.
+
+Mobile should feel intentionally designed.
+
+Desktop should use available space intelligently without becoming stretched.
+
+==================================================
+9. MICROINTERACTIONS
+==================================================
+
+Use subtle interactions.
+
+Target approximately:
+
+150–250ms
+
+Examples:
+
+- button hover
+- focus state
+- task completion transition
+- progress animation
+- subtle surface elevation
+- navigation transition
+- active state
+
+Animations should communicate state.
+
+Do not animate everything.
+
+Respect prefers-reduced-motion.
+
+==================================================
+10. STATES
+==================================================
+
+Every important Dashboard section must handle:
+
+- loading
+- populated
+- empty
+- error
+- offline/degraded state where applicable
+
+Never leave blank white boxes.
+
+Empty states should explain what happens next.
+
+Example:
+
+"No study plan yet."
+
+[Create today's plan]
+
+rather than simply:
+
+"No data."
+
+Do not fabricate placeholder statistics in production UI.
+
+==================================================
+11. ACCESSIBILITY
+==================================================
+
+Maintain or improve accessibility.
+
+Ensure:
+
+- semantic HTML
+- keyboard navigation
+- visible focus states
+- sufficient contrast
+- accessible labels
+- appropriate button/link semantics
+- touch targets
+- reduced motion support
+- no information communicated by color alone
+
+Do not sacrifice accessibility for aesthetics.
+
+==================================================
+12. TECHNICAL CONSTRAINTS
+==================================================
+
+Preserve:
+
+- React
+- Vite
+- existing Tailwind/CSS architecture
+- existing routing
+- existing state management
+- existing Supabase integration
+- existing API/data contracts
+- authentication
+- current feature behavior
+
+Do NOT modify:
+
+- Supabase schema
+- database migrations
+- RLS policies
+- authentication logic
+- payment logic
+- referral logic
+- business rules
+
+unless a change is absolutely necessary to fix an existing Dashboard rendering issue.
+
+Do not hardcode user-specific production data.
+
+Use existing hooks/selectors/services.
+
+Keep components maintainable.
+
+Extract reusable Dashboard primitives if appropriate.
+
+Examples:
+
+- SectionHeader
+- ProgressIndicator
+- NextAction
+- StudyTaskRow
+- DashboardMetric
+- EmptyState
+
+But do not create unnecessary abstractions.
+
+==================================================
+13. PERFORMANCE
+==================================================
+
+The redesign must not make the Dashboard noticeably heavier.
+
+Avoid unnecessary:
+
+- dependencies
+- large images
+- complex animation libraries
+- expensive renders
+- duplicated data fetching
+
+Prefer existing icons and assets.
+
+Use lazy loading only where it actually improves performance.
+
+==================================================
+14. IMPORTANT PRODUCT PRINCIPLE
+==================================================
+
+Do not try to show everything the application can do.
+
+The Dashboard is NOT a feature catalog.
+
+It is the student's starting point.
+
+The user should open MahirVerse and immediately understand:
+
+WHERE AM I?
+WHAT HAVE I DONE?
+WHAT SHOULD I DO NEXT?
+
+Everything else is secondary.
+
+==================================================
+15. IMPLEMENTATION PROCESS
+==================================================
+
+Work carefully.
+
+STEP 1
+Inspect the existing Dashboard and supporting components.
+
+STEP 2
+Identify reusable existing components and styles.
+
+STEP 3
+Implement the new Dashboard visual hierarchy.
+
+STEP 4
+Ensure all existing Dashboard actions still work.
+
+STEP 5
+Implement responsive behavior.
+
+STEP 6
+Implement loading, empty and error states.
+
+STEP 7
+Verify light and dark themes.
+
+STEP 8
+Run:
+
+- lint
+- tests
+- production build
+
+Fix all introduced issues.
+
+Do not stop after the UI "looks good".
+
+Verify that the Dashboard still functions correctly.
+
+==================================================
+16. QUALITY BAR
+==================================================
+
+Before considering this complete, ask:
+
+"If I saw this app for the first time, would I immediately understand what I should do?"
+
+"If I use this every day for 6 months, would this interface remain comfortable?"
+
+"Does the design feel premium without trying too hard?"
+
+"Does it feel like MahirVerse rather than a Tailwind template?"
+
+"Is every visible element earning its space?"
+
+"Does mobile feel as intentionally designed as desktop?"
+
+"Does the Dashboard reduce cognitive load rather than add to it?"
+
+If the answer is no, refine the design.
+
+==================================================
+FINAL REQUIREMENT
+==================================================
+
+Do NOT redesign other major sections yet.
+
+This phase ends with a polished, production-quality Dashboard/Home experience.
+
+Keep the implementation clean enough that the same visual language can later be extended to:
+
+Navigation
+Syllabus
+Focus
+Planner
+Progress
+Revision
+Notes
+Formulas
+Badges
+Groups
+Pro
+Settings
+Admin
+
+The Dashboard should establish the visual DNA of MahirVerse.
+
+Make it feel distinctive, calm, intelligent and genuinely enjoyable to use.
+
+Do not chase "minimal" for the sake of minimalism.
+
+Chase CLARITY + PERSONALITY + HIERARCHY + POLISH.
