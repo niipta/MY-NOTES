@@ -1,1 +1,25 @@
+Good progress. Before making any more changes, STOP and review the actual Dashboard/Home page at mobile width.
 
+Do not make another broad/global redesign.
+
+I want you to judge the Dashboard purely from a real student's perspective:
+
+- Is the primary action immediately obvious?
+- Is there too much visual weight from cards?
+- Is the teal accent being used selectively enough?
+- Does the dark mode feel premium and calm?
+- Does light mode have enough surface separation?
+- Is the typography hierarchy strong?
+- Does the Dashboard feel uniquely MahirVerse rather than like a generic productivity app?
+- Is the amount of information comfortable to scan in 3–5 seconds?
+
+Only make changes that clearly improve these points.
+
+Keep the existing Dashboard structure and functionality.
+Do not add new features, widgets, backend logic, database changes or unnecessary animations.
+Do not touch unrelated pages.
+
+Most importantly:
+PREFER REFINEMENT OVER REINVENTION.
+
+Afterward verify the Dashboard at 390px and desktop width and run the existing tests/build.
