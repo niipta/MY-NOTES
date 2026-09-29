@@ -1,1 +1,332 @@
+MAHIRVERSE — DASHBOARD PREMIUM REFINEMENT
 
+Redesign ONLY the existing Dashboard/Home page.
+
+I want you to deeply evaluate the current Dashboard from a REAL STUDENT'S perspective before changing anything.
+
+Do not redesign it from scratch. The current structure is good and should remain recognizable.
+
+The goal is:
+"Open the app → instantly understand what matters → know what to do next → feel motivated to study."
+
+Make it feel like a premium, purpose-built study product rather than a collection of cards.
+
+==================================================
+1. FIX THE VISUAL HIERARCHY
+==================================================
+
+Current dashboard has good information, but too many sections visually compete with each other.
+
+Create a very clear hierarchy:
+
+1. Greeting
+2. PRIMARY ACTION / WHAT TO DO NOW
+3. Today's progress
+4. Revision
+5. Long-term progress
+6. Quote
+
+The primary action must visually dominate.
+
+A student should understand the most important action within 2–3 seconds.
+
+Do not make every section equally prominent.
+
+Use typography, spacing, surface contrast and size to establish hierarchy rather than adding more decoration.
+
+==================================================
+2. MAKE THE PRIMARY CARD FEEL SPECIAL
+==================================================
+
+The current "Set up today's plan" card is the most important part of the Dashboard.
+
+Refine it into the visual focal point.
+
+Keep the existing content and functionality, but improve:
+
+- typography hierarchy
+- spacing
+- CTA prominence
+- subtle surface treatment
+- accent usage
+- visual balance
+
+The CTA should feel like the obvious next step without looking like a generic SaaS button.
+
+The card should feel calm and premium, not flashy.
+
+When a user already has a plan, the same area should naturally become the "Next Up" action using existing data.
+
+Do NOT invent data.
+
+==================================================
+3. COLOUR SYSTEM — IMPORTANT
+==================================================
+
+The current teal identity is good. KEEP TEAL as the primary MahirVerse accent.
+
+But refine the colour balance.
+
+Do NOT introduce multiple accent colours.
+
+Do NOT use rainbow gradients.
+
+Do NOT overuse bright teal.
+
+Use teal mainly for:
+- primary CTA
+- active navigation
+- important links
+- progress highlights
+- small meaningful accents
+
+DARK MODE:
+Keep the dark aesthetic, but make the surfaces feel slightly more sophisticated and intentional.
+
+The background, cards and borders should have subtle tonal separation instead of everything being almost the same dark colour.
+
+LIGHT MODE:
+The current white-on-white appearance feels flatter than the dark mode.
+
+Give the light theme a subtle warm/soft neutral background and slightly differentiated card surfaces.
+
+Cards should be visible through surface contrast and very subtle borders, NOT heavy shadows.
+
+Both themes must feel like the same product.
+
+==================================================
+4. REDUCE "CARD EVERYWHERE" FEEL
+==================================================
+
+Do not put every piece of information inside a heavy rounded container.
+
+Keep cards where they provide real grouping/value.
+
+Make lower-priority information visually lighter.
+
+Especially:
+- Revision should feel lightweight.
+- Long-term progress should feel analytical rather than promotional.
+- Quote should remain completely outside the card system.
+
+The dashboard should breathe.
+
+Use whitespace intentionally.
+
+==================================================
+5. TODAY'S PROGRESS
+==================================================
+
+The "Today" section is important because it answers:
+
+"How much have I actually done?"
+
+Make the primary metric immediately readable.
+
+The user should notice:
+
+0m / 6h
+
+before noticing secondary information.
+
+The weekly activity indicator should feel refined and integrated rather than looking like seven random boxes.
+
+Keep the existing data and functionality.
+
+Do not invent statistics.
+
+The Focus Timer entry should remain accessible but should not overpower today's progress.
+
+==================================================
+6. REVISION
+==================================================
+
+The current revision message is useful but visually too much like another large card.
+
+Make it feel like a concise actionable status.
+
+For example, conceptually:
+
+REVISION                         Full queue →
+
+You're caught up for now.
+Your next revision will follow the spaced schedule.
+
+Keep the actual existing copy/data where appropriate.
+
+If revision is actually due, make that state visually more prominent.
+
+The visual treatment should adapt to the user's actual revision state.
+
+==================================================
+7. LONG-TERM PROGRESS
+==================================================
+
+This section should answer:
+
+"Am I actually moving forward?"
+
+Make:
+
+0% mastered
+
+the primary metric.
+
+Keep:
+- mastered percentage
+- topic count
+- progress bar
+- tracker link
+- streak information
+
+But improve their hierarchy so they don't all compete.
+
+The progress bar should feel elegant and substantial without becoming visually loud.
+
+==================================================
+8. HEADER
+==================================================
+
+Keep the MahirVerse branding and PRO status.
+
+Simplify the mobile header visually.
+
+The Dashboard content is more important than secondary account actions.
+
+"Sign out" should not compete with the main experience.
+
+Do not change authentication functionality.
+
+==================================================
+9. BOTTOM NAVIGATION
+==================================================
+
+The current bottom navigation is good.
+
+Keep the existing navigation structure.
+
+Refine only:
+- active state
+- icon/label alignment
+- spacing
+- visual weight
+
+The active Home state should be obvious but subtle.
+
+Do not make the bottom navigation oversized.
+
+==================================================
+10. TYPOGRAPHY & SPACING
+==================================================
+
+Typography should create most of the premium feel.
+
+Improve:
+- heading weight
+- section labels
+- metric size
+- secondary text contrast
+- vertical rhythm
+
+Avoid excessive bold text.
+
+Use a consistent spacing rhythm throughout the Dashboard.
+
+The screen should feel spacious without wasting vertical space.
+
+==================================================
+11. THE HUMAN TEST
+==================================================
+
+After changes, evaluate the Dashboard as if you are a student opening it every morning.
+
+Within 3 seconds I should know:
+
+"What should I do now?"
+
+Within 5 seconds:
+
+"How much have I done today?"
+
+Then:
+
+"What is due?"
+
+Then:
+
+"Am I making progress?"
+
+Nothing on the screen should distract from those answers.
+
+The Dashboard should feel calm, focused and slightly motivating — not like an analytics/admin dashboard.
+
+==================================================
+12. RESPONSIVE QUALITY
+==================================================
+
+Prioritize mobile because this is the primary experience.
+
+Check at:
+
+360px
+390px
+430px
+
+Then ensure desktop remains balanced.
+
+Do not simply scale the mobile layout onto desktop.
+
+Avoid excessive vertical scrolling on mobile while keeping comfortable spacing.
+
+==================================================
+13. DO NOT ADD UNNECESSARY FEATURES
+==================================================
+
+Do NOT add:
+
+- new dashboard widgets
+- fake statistics
+- charts just for decoration
+- gamification elements
+- large illustrations
+- unnecessary animations
+- new dependencies
+- new backend logic
+- database changes
+- new dashboard sections
+
+Use the existing data and functionality.
+
+This is a visual/UX refinement, not a feature-development task.
+
+==================================================
+FINAL DESIGN DIRECTION
+==================================================
+
+The final Dashboard should feel:
+
+CALM
+PREMIUM
+INTENTIONAL
+FOCUSED
+MODERN
+STUDY-CENTRIC
+
+Think of it as a personal study command center.
+
+Not:
+- generic SaaS
+- admin panel
+- overly gamified education app
+- flashy AI dashboard
+
+The MahirVerse identity should come from restraint, typography, teal accent, spacing and thoughtful interaction — not decoration.
+
+IMPORTANT:
+Do not rewrite working components unnecessarily.
+Do not change backend/API/database behavior.
+Preserve existing functionality.
+
+Before finishing, run the existing Dashboard tests and production build.
+
+Only make changes that genuinely improve the Dashboard from a user's perspective.
